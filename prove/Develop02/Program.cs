@@ -8,9 +8,14 @@ namespace Develop02
         {
             // add some test entries
             Entry myEntry = new Entry();
-            myEntry.StorePrompt("What is your name?");
-            myEntry.StoreResponse("Mathew Manley");
-            myEntry.StoreDate("8 May 2023");
+            Prompt myPrompt = new Prompt();
+            string thisPrompt = myPrompt.SelectPrompt();
+            Console.Write(thisPrompt);
+            string response = Console.ReadLine();
+            myEntry.StorePrompt($"{thisPrompt} ");
+            myEntry.StoreResponse(response);
+            string date = DateTime.Now.ToString("dd MMMM yyyy");
+            myEntry.StoreDate(date);
 
             // create a journal to test
             Journal journal = new Journal();
@@ -21,7 +26,7 @@ namespace Develop02
             foreach (Entry entry in entries)
             {
                 string message
-                    = $"{entry.GetDate()}\n{entry.GetPrompt()}\n{entry.GetResponse()}\n";
+                    = $"\n{entry.GetDate()}\n{entry.GetPrompt()}\n{entry.GetResponse()}\n";
                 Console.WriteLine(message);
             }
         }
