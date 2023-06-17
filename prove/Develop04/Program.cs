@@ -1,9 +1,15 @@
 using System;
 
-class Program
+namespace Develop04
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello Develop04 World!");
+
+        static void Main(string[] args)
+        {
+            Activity activity = new Activity();
+
+            
+        }
     }
 }
